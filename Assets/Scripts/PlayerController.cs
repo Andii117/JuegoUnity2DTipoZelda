@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    //para que se cargue una unica vez el jugador
+    public static bool playerCreated;
+
     //Valocidad del player
     public float speed = 5.0f;
 
@@ -23,6 +27,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerCreated = true;
+        
         //Se inicializa el componente animator del player
         _anim        = GetComponent<Animator>();
         //Componente para mover al personaje con la fisica del motor
